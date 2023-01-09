@@ -32,12 +32,12 @@ export default function Taylor() {
 
             else{
                  fx = (derivative(fx,'x')).toString();
-                console.log(fx);
+                 if(derivative(fx,'x').toString() === "0"){
+                    break;
+                 }
                 f = evaluate(fx ,{x:x0});
                 f = f / factorial(i);
-                console.log(fx);
                 let eq = evaluate("(x-x0)^i",{x0:x0,x:x});
-               
                 ans = ans + f * eq;   
             }
             all_ans.push(ans);
